@@ -56,11 +56,22 @@ artifacts {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    api 'com.github.zihuan1:ZCleverRecyclerView:latest.release'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'  //1.0.5及以前版本的老用户升级需谨慎，API改动过大
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0'  //没有使用特殊Header，可以不加这行
+//    总是会去最新版本无论是正式版还是测试版
+    api 'com.github.zihuan1:RecyclerAdapter:latest.integration'
+    api 'com.github.zihuan1:ZCleverRecyclerView:latest.integration'
 
 }
 
 repositories {
     mavenCentral()
+}
+
+configurations.all {
+    // 动态版本
+    resolutionStrategy.cacheDynamicVersionsFor 1, 'minutes'
+    // 变化模块
+//    resolutionStrategy.cacheChangingModulesFor 1, 'minutes'
 }
