@@ -60,8 +60,9 @@ dependencies {
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'  //1.0.5及以前版本的老用户升级需谨慎，API改动过大
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0'  //没有使用特殊Header，可以不加这行
 //    总是会去最新版本无论是正式版还是测试版
-    api 'com.github.zihuan1:RecyclerAdapter:latest.integration'
-    api 'com.github.zihuan1:ZCleverRecyclerView:latest.integration'
+    api 'com.github.zihuan1:view-recycler-adapter:latest.integration'
+    api 'com.github.zihuan1:view-grace-recyclerview:latest.integration'
+
 
 }
 

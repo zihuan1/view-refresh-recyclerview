@@ -1,4 +1,4 @@
-package com.zihuan.demo
+package com.zihuan.view.completelibrary
 
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.RecyclerView
