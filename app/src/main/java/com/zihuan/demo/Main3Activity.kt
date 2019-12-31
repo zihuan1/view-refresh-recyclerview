@@ -1,10 +1,12 @@
 package com.zihuan.demo
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
-import com.zihuan.view.crvlibrary.ZEmptyView
+import com.zihuan.view.completelibrary.OnAutoRefreshLoadListener
 import kotlinx.android.synthetic.main.activity_main3.*
 
 class Main3Activity : AppCompatActivity() {
@@ -16,20 +18,51 @@ class Main3Activity : AppCompatActivity() {
 
         re_view3.buildVerticalLayout(ReAdapter(this)).setData(list)
         var manager = re_view3.getRealBuilder()
-        manager.setLoadListener(object : OnRefreshLoadMoreListener {
-            override fun onLoadMore(refreshLayout: RefreshLayout) {
-                list.clear()
-                manager.setData(list)
-                manager.loadOrPullComplete()
-            }
+//        原监听
+//        manager.setLoadListener(object : OnRefreshLoadMoreListener {
+//            override fun onLoadMore(refreshLayout: RefreshLayout) {
+//                list.clear()
+//                manager.setData(list)
+//                manager.loadOrPullComplete()
+//            }
+//
+//            override fun onRefresh(refreshLayout: RefreshLayout) {
+//                (0..100).forEach {
+//                    list.add("$it")
+//                }
+//                manager.setData(list)
+//                manager.loadOrPullComplete()
+//            }
+//        }).setRecyclerViewLayoutParam(height = -2)
+//        扩展监听
+        manager.setLoadListener(object : OnAutoRefreshLoadListener() {
+//            override fun onLoadMore(refreshLayout: RefreshLayout) {
+//                list.clear()
+//                manager.setData(list)
+//                Log.e("加载", "完成")
+//            }
+//
+//            override fun onRefresh(refreshLayout: RefreshLayout) {
+//                (0..100).forEach {
+//                    list.add("$it")
+//                }
+//                manager.setData(list)
+//                Log.e("刷新", "完成")
+//            }
 
-            override fun onRefresh(refreshLayout: RefreshLayout) {
-                (0..100).forEach {
-                    list.add("$it")
+            override fun onFusion(isRefresh: Boolean) {
+                Log.e("刷新/加载", "完成$isRefresh")
+                if (isRefresh) {
+                    (0..100).forEach {
+                        list.add("$it")
+                    }
+                    manager.setData(list)
+//                    Log.e("刷新", "完成")
+                } else {
+                    list.clear()
+                    manager.setData(list)
                 }
-                manager.setData(list)
-                manager.loadOrPullComplete()
             }
-        }).setRecyclerViewLayoutParam(height = -2)
+        })
     }
 }

@@ -3,9 +3,11 @@ package com.zihuan.demo
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.scwang.smartrefresh.header.MaterialHeader
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
+import com.zihuan.view.crvlibrary.RecycleViewDivider
 import com.zihuan.view.crvlibrary.initGrid
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,7 +16,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var builder = rv_view.buildVerticalLayout(ReAdapter(this)).setWrapContent()
+        var builder = rv_view.buildVerticalLayout(ReAdapter(this))
+                .setDivider(RecycleViewDivider(this, LinearLayoutManager.VERTICAL,1, R.color.colorPrimaryDark))
         var list = ArrayList<String>()
         (0..100).forEach {
             list.add("$it")
