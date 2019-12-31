@@ -57,9 +57,9 @@ class ZCompleteBuilder(
     /**
      * 设置监听
      */
-    fun setLoadListener(listenerAuto: OnAutoRefreshLoadListener) = apply {
+    fun setLoadListener(listener: OnRefreshLoadListener) = apply {
         setPullEnabled(true)
-        refreshLayout.setOnRefreshLoadMoreListener(listenerAuto)
+        refreshLayout.setOnRefreshLoadMoreListener(listener)
     }
 
 
