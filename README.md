@@ -1,4 +1,4 @@
-# 融合了刷新加载的RecyclerView
+# 融合了Adapter和刷新加载的RecyclerView
 
 Step 1. Add the JitPack repository to your build file
 
