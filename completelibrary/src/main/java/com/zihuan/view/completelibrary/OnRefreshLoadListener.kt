@@ -24,6 +24,6 @@ open class OnRefreshLoadListener : OnRefreshLoadMoreListener {
      *@param isRefresh 是否是刷新
      */
     open fun onFusion(isRefresh: Boolean = true) {
-
+        //待优化lambda方法调用  onClick{}
     }
 }
