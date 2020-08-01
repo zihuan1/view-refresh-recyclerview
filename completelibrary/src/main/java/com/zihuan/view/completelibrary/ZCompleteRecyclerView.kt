@@ -31,6 +31,7 @@ class ZCompleteRecyclerView : ZBaseCleverRecycler<ZCompleteBuilder, ZCompleteWra
         recyclerParent.layoutParams = LayoutParams(-1, -1)
         recyclerParent.addView(this)
         refreshLayout.addView(recyclerParent)
+        var a=1
         this@ZCompleteRecyclerView.addView(refreshLayout)
     }
 

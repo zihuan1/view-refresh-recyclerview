@@ -6,8 +6,7 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
 /**
  * 刷新加载完成扩展
  */
-@Deprecated("尽量用 SimpleOnRefreshLoadListener 只是规范了一下名称没有本质区别,以后会删除此类")
-open class OnRefreshLoadListener : OnRefreshLoadMoreListener {
+open class SimpleOnRefreshLoadListener : OnRefreshLoadMoreListener {
 
     /**
      * 加载监听

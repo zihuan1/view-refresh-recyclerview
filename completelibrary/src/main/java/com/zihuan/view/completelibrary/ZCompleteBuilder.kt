@@ -102,4 +102,14 @@ class ZCompleteBuilder(
         }
         return this
     }
+
+    /**
+     * 是否正在刷新
+     */
+    fun isRefreshing() = RefreshState.Refreshing == refreshLayout.state
+
+    /**
+     * 是否正在加载
+     */
+    fun isLoading() = RefreshState.Loading == refreshLayout.state
 }
