@@ -5,13 +5,13 @@ import android.util.AttributeSet
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
-import com.zihuan.view.crvlibrary.BaseCleverRecycler
+import com.zihuan.view.crvlibrary.ZBaseCleverRecycler
 
 /**
  * RecyclerView 模版类
  * @author Zihuan
  */
-class ZCompleteRecyclerView : BaseCleverRecycler<ZCompleteBuilder, ZCompleteWrapper> {
+class ZCompleteRecyclerView : ZBaseCleverRecycler<ZCompleteBuilder, ZCompleteWrapper> {
 
 
     private lateinit var refreshLayout: SmartRefreshLayout

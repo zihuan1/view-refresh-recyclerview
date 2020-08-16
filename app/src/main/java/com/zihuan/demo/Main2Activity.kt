@@ -3,7 +3,7 @@ package com.zihuan.demo
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.zihuan.view.crvlibrary.DefRecyclerWrapper
+import com.zihuan.view.crvlibrary.ZDefRecyclerWrapper
 import kotlinx.android.synthetic.main.activity_main2.*
 
 class Main2Activity : AppCompatActivity() {
@@ -18,7 +18,7 @@ class Main2Activity : AppCompatActivity() {
         (0..100).forEach {
             list.add("$it")
         }
-        var builder = DefRecyclerWrapper(re_view2)
+        var builder = ZDefRecyclerWrapper(re_view2)
         builder.buildVerticalLayout(ReAdapter(this)).setData(list)
     }
 }
