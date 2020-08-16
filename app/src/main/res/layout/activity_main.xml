@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.zihuan.view.crvlibrary.ZCleverRecyclerView
+    <com.zihuan.view.crvlibrary.CleverRecyclerView
         android:id="@+id/rv_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

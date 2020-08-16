@@ -5,12 +5,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.constant.RefreshState
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
-import com.zihuan.view.crvlibrary.ZBaseRecyclerBuilder
+import com.zihuan.view.crvlibrary.BaseRecyclerBuilder
 
 class ZCompleteBuilder(
     recyclerView: RecyclerView, adapter: RecyclerView.Adapter<*>, type: Int
     , private val refreshLayout: SmartRefreshLayout
-) : ZBaseRecyclerBuilder(adapter, type, recyclerView) {
+) : BaseRecyclerBuilder(adapter, type, recyclerView) {
 
     /**
      * RecyclerView设置布局参数
@@ -57,7 +57,7 @@ class ZCompleteBuilder(
     /**
      * 设置监听
      */
-    fun setLoadListener(listener: OnRefreshLoadListener) = apply {
+    fun setLoadListener(listener: SimpleOnRefreshLoadListener) = apply {
         setPullEnabled(true)
         refreshLayout.setOnRefreshLoadMoreListener(listener)
     }
@@ -93,7 +93,7 @@ class ZCompleteBuilder(
     /**
      * 覆盖父类方法,设置刷新自动设置刷新加载完成状态
      */
-    override fun setData(list: ArrayList<*>): ZBaseRecyclerBuilder {
+    override fun setData(list: ArrayList<*>): BaseRecyclerBuilder {
         super.setData(list)
         if (RefreshState.Refreshing == refreshLayout.state) {
             refreshLayout.finishRefresh()

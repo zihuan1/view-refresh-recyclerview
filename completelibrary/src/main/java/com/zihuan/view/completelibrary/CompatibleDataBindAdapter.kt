@@ -1,6 +1,7 @@
 package com.zihuan.view.completelibrary
 
 import com.zihuan.baseadapter.RecyclerBindAdapter
-import com.zihuan.view.crvlibrary.ZRecyclerData
+import com.zihuan.view.crvlibrary.RecyclerData
 
-class CompatibleDataBindAdapter(`object`: Any?, res: Int) : RecyclerBindAdapter(`object`, res), ZRecyclerData
+class CompatibleDataBindAdapter(`object`: Any?, res: Int) : RecyclerBindAdapter(`object`, res),
+    RecyclerData

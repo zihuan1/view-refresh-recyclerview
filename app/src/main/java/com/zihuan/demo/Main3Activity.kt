@@ -3,7 +3,7 @@ package com.zihuan.demo
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.zihuan.view.completelibrary.OnRefreshLoadListener
+import com.zihuan.view.completelibrary.SimpleOnRefreshLoadListener
 import kotlinx.android.synthetic.main.activity_main3.*
 
 class Main3Activity : AppCompatActivity() {
@@ -32,7 +32,7 @@ class Main3Activity : AppCompatActivity() {
 //            }
 //        }).setRecyclerViewLayoutParam(height = -2)
 //        扩展监听
-        manager.setLoadListener(object : OnRefreshLoadListener() {
+        manager.setLoadListener(object : SimpleOnRefreshLoadListener() {
 //            override fun onLoadMore(refreshLayout: RefreshLayout) {
 //                list.clear()
 //                manager.setData(list)
