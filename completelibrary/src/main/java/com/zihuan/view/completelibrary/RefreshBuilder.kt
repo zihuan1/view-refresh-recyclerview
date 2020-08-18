@@ -1,36 +1,16 @@
 package com.zihuan.view.completelibrary
 
-import android.widget.FrameLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.constant.RefreshState
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
-import com.zihuan.view.crvlibrary.ZBaseRecyclerBuilder
+import com.zihuan.view.crvlibrary.BaseRecyclerBuilder
 
-class ZCompleteBuilder(
-    recyclerView: RecyclerView, adapter: RecyclerView.Adapter<*>, type: Int
-    , private val refreshLayout: SmartRefreshLayout
-) : ZBaseRecyclerBuilder(adapter, type, recyclerView) {
-
-    /**
-     * RecyclerView设置布局参数
-     */
-    fun setRecyclerViewLayoutParam(
-        width: Int = FrameLayout.LayoutParams.MATCH_PARENT,
-        height: Int = FrameLayout.LayoutParams.WRAP_CONTENT
-    ) = apply {
-        getRecyclerView().layoutParams = FrameLayout.LayoutParams(width, height)
-    }
-
-    /**
-     * RefreshLayout设置布局参数
-     */
-    fun setRefrshLayoutParam(
-        width: Int = FrameLayout.LayoutParams.MATCH_PARENT,
-        height: Int = FrameLayout.LayoutParams.MATCH_PARENT
-    ) = apply {
-        refreshLayout.layoutParams = FrameLayout.LayoutParams(width, height)
-    }
+/**
+ * 带刷新的构建器
+ */
+class RefreshBuilder(recyclerView: RecyclerView, adapter: RecyclerView.Adapter<*>, type: Int, private val refreshLayout: SmartRefreshLayout)
+    : BaseRecyclerBuilder(adapter, type, recyclerView) {
 
     /**
      * 设置刷新
@@ -55,15 +35,6 @@ class ZCompleteBuilder(
     }
 
     /**
-     * 设置监听
-     */
-    fun setLoadListener(listener: SimpleOnRefreshLoadListener) = apply {
-        setPullEnabled(true)
-        refreshLayout.setOnRefreshLoadMoreListener(listener)
-    }
-
-
-    /**
      * 显示刷新动画并且触发刷新事件
      */
     fun autoRefresh() = apply {
@@ -71,7 +42,7 @@ class ZCompleteBuilder(
     }
 
     /**
-     * 显示加载动画并且触发刷新事件
+     * 显示加载动画并且触发加载事件
      */
     fun autoLoadMore() = apply {
         refreshLayout.autoLoadMore()
@@ -93,7 +64,7 @@ class ZCompleteBuilder(
     /**
      * 覆盖父类方法,设置刷新自动设置刷新加载完成状态
      */
-    override fun setData(list: ArrayList<*>): ZBaseRecyclerBuilder {
+    override fun setData(list: ArrayList<*>): BaseRecyclerBuilder {
         super.setData(list)
         if (RefreshState.Refreshing == refreshLayout.state) {
             refreshLayout.finishRefresh()

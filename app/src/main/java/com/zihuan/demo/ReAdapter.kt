@@ -5,7 +5,7 @@ import android.util.Log
 import com.zihuan.baseadapter.RecyclerAdapter
 import com.zihuan.baseadapter.RecyclerViewHolder
 import com.zihuan.view.crvlibrary.R
-import com.zihuan.view.crvlibrary.ZRecyclerData
+import com.zihuan.view.crvlibrary.RecyclerData
 
 /**
  *
@@ -13,7 +13,7 @@ import com.zihuan.view.crvlibrary.ZRecyclerData
  * @author zihuan
  * @date 2019/12/4 11:06
  */
-class ReAdapter(obj: Any) : RecyclerAdapter(obj), ZRecyclerData {
+class ReAdapter(obj: Any) : RecyclerAdapter(obj), RecyclerData {
     var mList = ArrayList<String>()
 
     override fun getLayoutResId() = R.layout.layout

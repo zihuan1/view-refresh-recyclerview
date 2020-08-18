@@ -6,7 +6,7 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
 /**
  * 刷新加载完成扩展
  */
-open class SimpleOnRefreshLoadListener : OnRefreshLoadMoreListener {
+open class SimpleRefreshListener : OnRefreshLoadMoreListener {
 
     /**
      * 加载监听

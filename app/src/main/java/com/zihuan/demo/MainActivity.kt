@@ -17,12 +17,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var builder = rv_view.buildVerticalLayout(ReAdapter(this))
-                .setDivider(RecycleViewDivider(this, LinearLayoutManager.VERTICAL,1, R.color.colorPrimaryDark))
+        val recyclerOperation = builder.getRecyclerOperation()
+        recyclerOperation.setDivider(RecycleViewDivider(this, LinearLayoutManager.VERTICAL, 1, R.color.colorPrimaryDark))
         var list = ArrayList<String>()
         (0..100).forEach {
             list.add("$it")
         }
-        rv_view.getBaseBuilder().setData(list).scrollToBottom()
+        rv_view.getBuilder().setData(list)
+        recyclerOperation.scrollToBottom()
         bt_click.setOnClickListener {
             startActivity(Intent(this, Main2Activity::class.java))
         }
