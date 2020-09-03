@@ -59,7 +59,7 @@ dependencies {
     api 'androidx.recyclerview:recyclerview:1.0.0'
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'  //1.0.5及以前版本的老用户升级需谨慎，API改动过大
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0'  //没有使用特殊Header，可以不加这行
-    api 'com.github.zihuan1:view-grace-recyclerview:0.5.2'
+    api 'com.github.zihuan1:view-grace-recyclerview:0.5.5'
 }
 
 repositories {
