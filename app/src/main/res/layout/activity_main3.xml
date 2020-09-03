@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="刷新加载" />
 
-    <com.zihuan.view.completelibrary.RefreshRecyclerView
+    <com.zihuan.view.refreshlibrary.RefreshRecyclerView
         android:id="@+id/re_view3"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

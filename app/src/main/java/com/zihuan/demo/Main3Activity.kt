@@ -3,7 +3,7 @@ package com.zihuan.demo
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.zihuan.view.completelibrary.SimpleRefreshListener
+import com.zihuan.view.refreshlibrary.SimpleRefreshListener
 import kotlinx.android.synthetic.main.activity_main3.*
 
 class Main3Activity : AppCompatActivity() {
