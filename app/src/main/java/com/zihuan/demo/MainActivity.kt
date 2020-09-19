@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.scwang.smartrefresh.header.MaterialHeader
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
@@ -29,16 +30,16 @@ class MainActivity : AppCompatActivity(), ViewOnItemClick, ViewOnItemLongClick {
             list.add("$it")
         }
         rv_view.getBuilder().setData(list)
-        recyclerOperation.scrollToBottom()
+//        recyclerOperation.scrollToBottom()
         bt_click.setOnClickListener {
             startActivity(Intent(this, Main2Activity::class.java))
         }
-
-        val reAdapter = ReAdapter(this)
-        rv_view.buildVerticalLayout(reAdapter)
-        reAdapter.setOnItemClick { view, position ->
-
-        }
+        //adapter 2
+//        val reAdapter = ReAdapter(this)
+//        rv_view.buildVerticalLayout(reAdapter)
+//        reAdapter.setOnItemClick { view, position ->
+//
+//        }
 //        reAdapter.setOnChildClick(object : ViewOnItemChildClick {
 //            override fun setOnChildClick(view: View?, position: Int) {
 //
