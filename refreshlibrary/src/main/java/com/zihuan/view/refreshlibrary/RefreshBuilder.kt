@@ -9,8 +9,7 @@ import com.zihuan.view.crvlibrary.BaseRecyclerBuilder
 /**
  * 带刷新的构建器
  */
-class RefreshBuilder(recyclerView: RecyclerView, adapter: RecyclerView.Adapter<*>, type: Int, private val refreshLayout: SmartRefreshLayout)
-    : BaseRecyclerBuilder(adapter, type, recyclerView) {
+class RefreshBuilder(private val refreshLayout: SmartRefreshLayout) : BaseRecyclerBuilder() {
 
     /**
      * 设置刷新
